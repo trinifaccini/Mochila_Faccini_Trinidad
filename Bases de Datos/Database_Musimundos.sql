@@ -1,15 +1,15 @@
-CREATE DATABASE  IF NOT EXISTS `musimundos` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS `musimundos` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `musimundos`;
--- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: localhost    Database: musimundos
+-- Host: 127.0.0.1    Database: musimundos
 -- ------------------------------------------------------
--- Server version	8.0.12
+-- Server version	8.0.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,14 +23,14 @@ USE `musimundos`;
 
 DROP TABLE IF EXISTS `albumes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `albumes` (
-  `id` smallint(6) NOT NULL,
+  `id` smallint NOT NULL,
   `titulo` varchar(95) DEFAULT NULL,
-  `id_artista` smallint(6) DEFAULT NULL,
+  `id_artista` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_artista_idx` (`id_artista`),
-  CONSTRAINT `id_artista` FOREIGN KEY (`id_artista`) REFERENCES `artistas` (`id`)
+  KEY `fk_album_artistas_idx` (`id_artista`),
+  CONSTRAINT `fk_album_artistas` FOREIGN KEY (`id_artista`) REFERENCES `artistas` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -50,12 +50,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `artistas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `artistas` (
-  `id` smallint(6) NOT NULL,
-  `nombre` varchar(85) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(85) COLLATE utf8_spanish_ci NOT NULL,
+  `rating` double(3,1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=279 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +65,7 @@ CREATE TABLE `artistas` (
 
 LOCK TABLES `artistas` WRITE;
 /*!40000 ALTER TABLE `artistas` DISABLE KEYS */;
-INSERT INTO `artistas` VALUES (1,'AC/DC'),(2,'Accept'),(3,'Aerosmith'),(4,'Alanis Morissette'),(5,'Alice In Chains'),(6,'Antônio Carlos Jobim'),(7,'Apocalyptica'),(8,'Audioslave'),(9,'BackBeat'),(10,'Billy Cobham'),(11,'Black Label Society'),(12,'Black Sabbath'),(13,'Body Count'),(14,'Bruce Dickinson'),(15,'Buddy Guy'),(16,'Caetano Veloso'),(17,'Chico Buarque'),(18,'Chico Science & Nação Zumbi'),(19,'Cidade Negra'),(20,'Cláudio Zoli'),(21,'Various Artists'),(22,'Led Zeppelin'),(23,'Frank Zappa & Captain Beefheart'),(24,'Marcos Valle'),(25,'Milton Nascimento & Bebeto'),(26,'Azymuth'),(27,'Gilberto Gil'),(28,'João Gilberto'),(29,'Bebel Gilberto'),(30,'Jorge Vercilo'),(31,'Baby Consuelo'),(32,'Ney Matogrosso'),(33,'Luiz Melodia'),(34,'Nando Reis'),(35,'Pedro Luís & A Parede'),(36,'O Rappa'),(37,'Ed Motta'),(38,'Banda Black Rio'),(39,'Fernanda Porto'),(40,'Os Cariocas'),(41,'Elis Regina'),(42,'Milton Nascimento'),(43,'A Cor Do Som'),(44,'Kid Abelha'),(45,'Sandra De Sá'),(46,'Jorge Ben'),(47,'Hermeto Pascoal'),(48,'Barão Vermelho'),(49,'Edson, DJ Marky & DJ Patife Featuring Fernanda Porto'),(50,'Metallica'),(51,'Queen'),(52,'Kiss'),(53,'Spyro Gyra'),(54,'Green Day'),(55,'David Coverdale'),(56,'Gonzaguinha'),(57,'Os Mutantes'),(58,'Deep Purple'),(59,'Santana'),(60,'Santana Feat. Dave Matthews'),(61,'Santana Feat. Everlast'),(62,'Santana Feat. Rob Thomas'),(63,'Santana Feat. Lauryn Hill & Cee-Lo'),(64,'Santana Feat. The Project G&B'),(65,'Santana Feat. Maná'),(66,'Santana Feat. Eagle-Eye Cherry'),(67,'Santana Feat. Eric Clapton'),(68,'Miles Davis'),(69,'Gene Krupa'),(70,'Toquinho & Vinícius'),(71,'Vinícius De Moraes & Baden Powell'),(72,'Vinícius De Moraes'),(73,'Vinícius E Qurteto Em Cy'),(74,'Vinícius E Odette Lara'),(75,'Vinicius, Toquinho & Quarteto Em Cy'),(76,'Creedence Clearwater Revival'),(77,'Cássia Eller'),(78,'Def Leppard'),(79,'Dennis Chambers'),(80,'Djavan'),(81,'Eric Clapton'),(82,'Faith No More'),(83,'Falamansa'),(84,'Foo Fighters'),(85,'Frank Sinatra'),(86,'Funk Como Le Gusta'),(87,'Godsmack'),(88,'Guns N\' Roses'),(89,'Incognito'),(90,'Iron Maiden'),(91,'James Brown'),(92,'Jamiroquai'),(93,'JET'),(94,'Jimi Hendrix'),(95,'Joe Satriani'),(96,'Jota Quest'),(97,'João Suplicy'),(98,'Judas Priest'),(99,'Legião Urbana'),(100,'Lenny Kravitz'),(101,'Lulu Santos'),(102,'Marillion'),(103,'Marisa Monte'),(104,'Marvin Gaye'),(105,'Men At Work'),(106,'Motörhead'),(107,'Motörhead & Girlschool'),(108,'Mônica Marianno'),(109,'Mötley Crüe'),(110,'Nirvana'),(111,'O Terço'),(112,'Olodum'),(113,'Os Paralamas Do Sucesso'),(114,'Ozzy Osbourne'),(115,'Page & Plant'),(116,'Passengers'),(117,'Paul D\'Ianno'),(118,'Pearl Jam'),(119,'Peter Tosh'),(120,'Pink Floyd'),(121,'Planet Hemp'),(122,'R.E.M. Feat. Kate Pearson'),(123,'R.E.M. Feat. KRS-One'),(124,'R.E.M.'),(125,'Raimundos'),(126,'Raul Seixas'),(127,'Red Hot Chili Peppers'),(128,'Rush'),(129,'Simply Red'),(130,'Skank'),(131,'Smashing Pumpkins'),(132,'Soundgarden'),(133,'Stevie Ray Vaughan & Double Trouble'),(134,'Stone Temple Pilots'),(135,'System Of A Down'),(136,'Terry Bozzio, Tony Levin & Steve Stevens'),(137,'The Black Crowes'),(138,'The Clash'),(139,'The Cult'),(140,'The Doors'),(141,'The Police'),(142,'The Rolling Stones'),(143,'The Tea Party'),(144,'The Who'),(145,'Tim Maia'),(146,'Titãs'),(147,'Battlestar Galactica'),(148,'Heroes'),(149,'Lost'),(150,'U2'),(151,'UB40'),(152,'Van Halen'),(153,'Velvet Revolver'),(154,'Whitesnake'),(155,'Zeca Pagodinho'),(156,'The Office'),(157,'Dread Zeppelin'),(158,'Battlestar Galactica (Classic)'),(159,'Aquaman'),(160,'Christina Aguilera featuring BigElf'),(161,'Aerosmith & Sierra Leone\'s Refugee Allstars'),(162,'Los Lonely Boys'),(163,'Corinne Bailey Rae'),(164,'Dhani Harrison & Jakob Dylan'),(165,'Jackson Browne'),(166,'Avril Lavigne'),(167,'Big & Rich'),(168,'Youssou N\'Dour'),(169,'Black Eyed Peas'),(170,'Jack Johnson'),(171,'Ben Harper'),(172,'Snow Patrol'),(173,'Matisyahu'),(174,'The Postal Service'),(175,'Jaguares'),(176,'The Flaming Lips'),(177,'Jack\'s Mannequin & Mick Fleetwood'),(178,'Regina Spektor'),(179,'Scorpions'),(180,'House Of Pain'),(181,'Xis'),(182,'Nega Gizza'),(183,'Gustavo & Andres Veiga & Salazar'),(184,'Rodox'),(185,'Charlie Brown Jr.'),(186,'Pedro Luís E A Parede'),(187,'Los Hermanos'),(188,'Mundo Livre S/A'),(189,'Otto'),(190,'Instituto'),(191,'Nação Zumbi'),(192,'DJ Dolores & Orchestra Santa Massa'),(193,'Seu Jorge'),(194,'Sabotage E Instituto'),(195,'Stereo Maracana'),(196,'Cake'),(197,'Aisha Duo'),(198,'Habib Koité and Bamada'),(199,'Karsh Kale'),(200,'The Posies'),(201,'Luciana Souza/Romero Lubambo'),(202,'Aaron Goldberg'),(203,'Nicolaus Esterhazy Sinfonia'),(204,'Temple of the Dog'),(205,'Chris Cornell'),(206,'Alberto Turco & Nova Schola Gregoriana'),(207,'Richard Marlow & The Choir of Trinity College, Cambridge'),(208,'English Concert & Trevor Pinnock'),(209,'Anne-Sophie Mutter, Herbert Von Karajan & Wiener Philharmoniker'),(210,'Hilary Hahn, Jeffrey Kahane, Los Angeles Chamber Orchestra & Margaret Batjer'),(211,'Wilhelm Kempff'),(212,'Yo-Yo Ma'),(213,'Scholars Baroque Ensemble'),(214,'Academy of St. Martin in the Fields & Sir Neville Marriner'),(215,'Academy of St. Martin in the Fields Chamber Ensemble & Sir Neville Marriner'),(216,'Berliner Philharmoniker, Claudio Abbado & Sabine Meyer'),(217,'Royal Philharmonic Orchestra & Sir Thomas Beecham'),(218,'Orchestre Révolutionnaire et Romantique & John Eliot Gardiner'),(219,'Britten Sinfonia, Ivor Bolton & Lesley Garrett'),(220,'Chicago Symphony Chorus, Chicago Symphony Orchestra & Sir Georg Solti'),(221,'Sir Georg Solti & Wiener Philharmoniker'),(222,'Academy of St. Martin in the Fields, John Birch, Sir Neville Marriner & Sylvia McNair'),(223,'London Symphony Orchestra & Sir Charles Mackerras'),(224,'Barry Wordsworth & BBC Concert Orchestra'),(225,'Herbert Von Karajan, Mirella Freni & Wiener Philharmoniker'),(226,'Eugene Ormandy'),(227,'Luciano Pavarotti'),(228,'Leonard Bernstein & New York Philharmonic'),(229,'Boston Symphony Orchestra & Seiji Ozawa'),(230,'Aaron Copland & London Symphony Orchestra'),(231,'Ton Koopman'),(232,'Sergei Prokofiev & Yuri Temirkanov'),(233,'Chicago Symphony Orchestra & Fritz Reiner'),(234,'Orchestra of The Age of Enlightenment'),(235,'Emanuel Ax, Eugene Ormandy & Philadelphia Orchestra'),(236,'James Levine'),(237,'Berliner Philharmoniker & Hans Rosbaud'),(238,'Maurizio Pollini'),(239,'Academy of St. Martin in the Fields, Sir Neville Marriner & William Bennett'),(240,'Gustav Mahler'),(241,'Felix Schmidt, London Symphony Orchestra & Rafael Frühbeck de Burgos'),(242,'Edo de Waart & San Francisco Symphony'),(243,'Antal Doráti & London Symphony Orchestra'),(244,'Choir Of Westminster Abbey & Simon Preston'),(245,'Michael Tilson Thomas & San Francisco Symphony'),(246,'Chor der Wiener Staatsoper, Herbert Von Karajan & Wiener Philharmoniker'),(247,'The King\'s Singers'),(248,'Berliner Philharmoniker & Herbert Von Karajan'),(249,'Sir Georg Solti, Sumi Jo & Wiener Philharmoniker'),(250,'Christopher O\'Riley'),(251,'Fretwork'),(252,'Amy Winehouse'),(253,'Calexico'),(254,'Otto Klemperer & Philharmonia Orchestra'),(255,'Yehudi Menuhin'),(256,'Philharmonia Orchestra & Sir Neville Marriner'),(257,'Academy of St. Martin in the Fields, Sir Neville Marriner & Thurston Dart'),(258,'Les Arts Florissants & William Christie'),(259,'The 12 Cellists of The Berlin Philharmonic'),(260,'Adrian Leaper & Doreen de Feis'),(261,'Roger Norrington, London Classical Players'),(262,'Charles Dutoit & L\'Orchestre Symphonique de Montréal'),(263,'Equale Brass Ensemble, John Eliot Gardiner & Munich Monteverdi Orchestra and Choir'),(264,'Kent Nagano and Orchestre de l\'Opéra de Lyon'),(265,'Julian Bream'),(266,'Martin Roscoe'),(267,'Göteborgs Symfoniker & Neeme Järvi'),(268,'Itzhak Perlman'),(269,'Michele Campanella'),(270,'Gerald Moore'),(271,'Mela Tenenbaum, Pro Musica Prague & Richard Kapp'),(272,'Emerson String Quartet'),(273,'C. Monteverdi, Nigel Rogers - Chiaroscuro; London Baroque; London Cornett & Sackbu'),(274,'Nash Ensemble'),(275,'Philip Glass Ensemble');
+INSERT INTO `artistas` VALUES (1,'AC/DC',1.0),(2,'Accept',0.0),(3,'Aerosmith',0.0),(4,'Alanis Morissette',0.0),(5,'Alice In Chains',0.0),(6,'Antônio Carlos Jobim',0.0),(7,'Apocalyptica',0.0),(8,'Audioslave',0.0),(9,'BackBeat',0.0),(10,'Billy Cobham',0.0),(11,'Black Label Society',0.0),(12,'Black Sabbath',0.0),(13,'Body Count',0.0),(14,'Bruce Dickinson',0.0),(15,'Buddy Guy',0.0),(16,'Caetano Veloso',0.0),(17,'Chico Buarque',0.0),(18,'Chico Science & Nação Zumbi',0.0),(19,'Cidade Negra',0.0),(20,'Cláudio Zoli',0.0),(21,'Various Artists',0.0),(22,'Led Zeppelin',0.0),(23,'Frank Zappa & Captain Beefheart',0.0),(24,'Marcos Valle',0.0),(25,'Milton Nascimento & Bebeto',0.0),(26,'Azymuth',0.0),(27,'Gilberto Gil',0.0),(28,'João Gilberto',0.0),(29,'Bebel Gilberto',0.0),(30,'Jorge Vercilo',0.0),(31,'Baby Consuelo',0.0),(32,'Ney Matogrosso',0.0),(33,'Luiz Melodia',0.0),(34,'Nando Reis',0.0),(35,'Pedro Luís & A Parede',0.0),(36,'O Rappa',0.0),(37,'Ed Motta',0.0),(38,'Banda Black Rio',0.0),(39,'Fernanda Porto',0.0),(40,'Os Cariocas',0.0),(41,'Elis Regina',0.0),(42,'Milton Nascimento',0.0),(43,'A Cor Do Som',0.0),(44,'Kid Abelha',0.0),(45,'Sandra De Sá',0.0),(46,'Jorge Ben',0.0),(47,'Hermeto Pascoal',0.0),(48,'Barão Vermelho',0.0),(49,'Edson, DJ Marky & DJ Patife Featuring Fernanda Porto',0.0),(50,'Metallica',0.0),(51,'Queen',5.5),(52,'Kiss',0.0),(53,'Spyro Gyra',0.0),(54,'Green Day',2.5),(55,'David Coverdale',0.0),(56,'Gonzaguinha',1.8),(57,'Os Mutantes',0.0),(58,'Deep Purple',0.0),(59,'Santana',2.9),(60,'Santana Feat. Dave Matthews',0.0),(61,'Santana Feat. Everlast',0.0),(62,'Santana Feat. Rob Thomas',0.0),(63,'Santana Feat. Lauryn Hill & Cee-Lo',8.4),(64,'Santana Feat. The Project G&B',0.0),(65,'Santana Feat. Maná',0.0),(66,'Santana Feat. Eagle-Eye Cherry',4.7),(67,'Santana Feat. Eric Clapton',0.0),(68,'Miles Davis',5.6),(69,'Gene Krupa',0.0),(70,'Toquinho & Vinícius',3.5),(71,'Vinícius De Moraes & Baden Powell',0.0),(72,'Vinícius De Moraes',0.0),(73,'Vinícius E Qurteto Em Cy',0.0),(74,'Vinícius E Odette Lara',0.0),(75,'Vinicius, Toquinho & Quarteto Em Cy',0.0),(76,'Creedence Clearwater Revival',0.0),(77,'Cássia Eller',0.0),(78,'Def Leppard',0.0),(79,'Dennis Chambers',0.0),(80,'Djavan',0.0),(81,'Eric Clapton',0.0),(82,'Faith No More',0.0),(83,'Falamansa',0.0),(84,'Foo Fighters',0.0),(85,'Frank Sinatra',0.0),(86,'Funk Como Le Gusta',0.0),(87,'Godsmack',0.0),(88,'Guns N\' Roses',0.0),(89,'Incognito',0.0),(90,'Iron Maiden',0.0),(91,'James Brown',0.0),(92,'Jamiroquai',0.0),(93,'JET',0.0),(94,'Jimi Hendrix',0.0),(95,'Joe Satriani',0.0),(96,'Jota Quest',0.0),(97,'João Suplicy',0.0),(98,'Judas Priest',0.0),(99,'Legião Urbana',0.0),(100,'Lenny Kravitz',0.0),(101,'Lulu Santos',0.0),(102,'Marillion',0.0),(103,'Marisa Monte',0.0),(104,'Marvin Gaye',0.0),(105,'Men At Work',0.0),(106,'Motörhead',0.0),(107,'Motörhead & Girlschool',0.0),(108,'Mônica Marianno',0.0),(109,'Mötley Crüe',0.0),(110,'Nirvana',0.0),(111,'O Terço',0.0),(112,'Olodum',0.0),(113,'Os Paralamas Do Sucesso',0.0),(114,'Ozzy Osbourne',0.0),(115,'Page & Plant',0.0),(116,'Passengers',0.0),(117,'Paul D\'Ianno',0.0),(118,'Pearl Jam',0.0),(119,'Peter Tosh',0.0),(120,'Pink Floyd',0.0),(121,'Planet Hemp',0.0),(122,'R.E.M. Feat. Kate Pearson',0.0),(123,'R.E.M. Feat. KRS-One',0.0),(124,'R.E.M.',0.0),(125,'Raimundos',0.0),(126,'Raul Seixas',0.0),(127,'Red Hot Chili Peppers',0.0),(128,'Rush',0.0),(129,'Simply Red',0.0),(130,'Skank',0.0),(131,'Smashing Pumpkins',0.0),(132,'Soundgarden',0.0),(133,'Stevie Ray Vaughan & Double Trouble',0.0),(134,'Stone Temple Pilots',0.0),(135,'System Of A Down',0.0),(136,'Terry Bozzio, Tony Levin & Steve Stevens',0.0),(137,'The Black Crowes',0.0),(138,'The Clash',0.0),(139,'The Cult',0.0),(140,'The Doors',0.0),(141,'The Police',0.0),(142,'The Rolling Stones',0.0),(143,'The Tea Party',0.0),(144,'The Who',0.0),(145,'Tim Maia',0.0),(146,'Titãs',0.0),(147,'Battlestar Galactica',0.0),(148,'Heroes',0.0),(149,'Lost',0.0),(150,'U2',0.0),(151,'UB40',0.0),(152,'Van Halen',0.0),(153,'Velvet Revolver',0.0),(154,'Whitesnake',0.0),(155,'Zeca Pagodinho',0.0),(156,'The Office',0.0),(157,'Dread Zeppelin',0.0),(158,'Battlestar Galactica (Classic)',0.0),(159,'Aquaman',0.0),(160,'Christina Aguilera featuring BigElf',0.0),(161,'Aerosmith & Sierra Leone\'s Refugee Allstars',0.0),(162,'Los Lonely Boys',0.0),(163,'Corinne Bailey Rae',0.0),(164,'Dhani Harrison & Jakob Dylan',0.0),(165,'Jackson Browne',0.0),(166,'Avril Lavigne',0.0),(167,'Big & Rich',0.0),(168,'Youssou N\'Dour',0.0),(169,'Black Eyed Peas',0.0),(170,'Jack Johnson',0.0),(171,'Ben Harper',0.0),(172,'Snow Patrol',0.0),(173,'Matisyahu',0.0),(174,'The Postal Service',0.0),(175,'Jaguares',0.0),(176,'The Flaming Lips',0.0),(177,'Jack\'s Mannequin & Mick Fleetwood',0.0),(178,'Regina Spektor',0.0),(179,'Scorpions',0.0),(180,'House Of Pain',0.0),(181,'Xis',0.0),(182,'Nega Gizza',0.0),(183,'Gustavo & Andres Veiga & Salazar',0.0),(184,'Rodox',0.0),(185,'Charlie Brown Jr.',0.0),(186,'Pedro Luís E A Parede',0.0),(187,'Los Hermanos',0.0),(188,'Mundo Livre S/A',0.0),(189,'Otto',0.0),(190,'Instituto',0.0),(191,'Nação Zumbi',0.0),(192,'DJ Dolores & Orchestra Santa Massa',0.0),(193,'Seu Jorge',0.0),(194,'Sabotage E Instituto',0.0),(195,'Stereo Maracana',0.0),(196,'Cake',0.0),(197,'Aisha Duo',0.0),(198,'Habib Koité and Bamada',0.0),(199,'Karsh Kale',0.0),(200,'The Posies',0.0),(201,'Luciana Souza/Romero Lubambo',0.0),(202,'Aaron Goldberg',0.0),(203,'Nicolaus Esterhazy Sinfonia',0.0),(204,'Temple of the Dog',0.0),(205,'Chris Cornell',0.0),(206,'Alberto Turco & Nova Schola Gregoriana',0.0),(207,'Richard Marlow & The Choir of Trinity College, Cambridge',0.0),(208,'English Concert & Trevor Pinnock',0.0),(209,'Anne-Sophie Mutter, Herbert Von Karajan & Wiener Philharmoniker',0.0),(210,'Hilary Hahn, Jeffrey Kahane, Los Angeles Chamber Orchestra & Margaret Batjer',0.0),(211,'Wilhelm Kempff',0.0),(212,'Yo-Yo Ma',0.0),(213,'Scholars Baroque Ensemble',0.0),(214,'Academy of St. Martin in the Fields & Sir Neville Marriner',0.0),(215,'Academy of St. Martin in the Fields Chamber Ensemble & Sir Neville Marriner',0.0),(216,'Berliner Philharmoniker, Claudio Abbado & Sabine Meyer',0.0),(217,'Royal Philharmonic Orchestra & Sir Thomas Beecham',0.0),(218,'Orchestre Révolutionnaire et Romantique & John Eliot Gardiner',0.0),(219,'Britten Sinfonia, Ivor Bolton & Lesley Garrett',0.0),(220,'Chicago Symphony Chorus, Chicago Symphony Orchestra & Sir Georg Solti',0.0),(221,'Sir Georg Solti & Wiener Philharmoniker',0.0),(222,'Academy of St. Martin in the Fields, John Birch, Sir Neville Marriner & Sylvia McNair',0.0),(223,'London Symphony Orchestra & Sir Charles Mackerras',0.0),(224,'Barry Wordsworth & BBC Concert Orchestra',0.0),(225,'Herbert Von Karajan, Mirella Freni & Wiener Philharmoniker',0.0),(226,'Eugene Ormandy',0.0),(227,'Luciano Pavarotti',0.0),(228,'Leonard Bernstein & New York Philharmonic',0.0),(229,'Boston Symphony Orchestra & Seiji Ozawa',0.0),(230,'Aaron Copland & London Symphony Orchestra',0.0),(231,'Ton Koopman',0.0),(232,'Sergei Prokofiev & Yuri Temirkanov',0.0),(233,'Chicago Symphony Orchestra & Fritz Reiner',0.0),(234,'Orchestra of The Age of Enlightenment',0.0),(235,'Emanuel Ax, Eugene Ormandy & Philadelphia Orchestra',0.0),(236,'James Levine',0.0),(237,'Berliner Philharmoniker & Hans Rosbaud',0.0),(238,'Maurizio Pollini',0.0),(239,'Academy of St. Martin in the Fields, Sir Neville Marriner & William Bennett',0.0),(240,'Gustav Mahler',0.0),(241,'Felix Schmidt, London Symphony Orchestra & Rafael Frühbeck de Burgos',0.0),(242,'Edo de Waart & San Francisco Symphony',0.0),(243,'Antal Doráti & London Symphony Orchestra',0.0),(244,'Choir Of Westminster Abbey & Simon Preston',0.0),(245,'Michael Tilson Thomas & San Francisco Symphony',0.0),(246,'Chor der Wiener Staatsoper, Herbert Von Karajan & Wiener Philharmoniker',0.0),(247,'The King\'s Singers',0.0),(248,'Berliner Philharmoniker & Herbert Von Karajan',0.0),(249,'Sir Georg Solti, Sumi Jo & Wiener Philharmoniker',0.0),(250,'Christopher O\'Riley',0.0),(251,'Fretwork',0.0),(252,'Amy Winehouse',0.0),(253,'Calexico',0.0),(254,'Otto Klemperer & Philharmonia Orchestra',0.0),(255,'Yehudi Menuhin',0.0),(256,'Philharmonia Orchestra & Sir Neville Marriner',0.0),(257,'Academy of St. Martin in the Fields, Sir Neville Marriner & Thurston Dart',0.0),(258,'Les Arts Florissants & William Christie',0.0),(259,'The 12 Cellists of The Berlin Philharmonic',0.0),(260,'Adrian Leaper & Doreen de Feis',0.0),(261,'Roger Norrington, London Classical Players',0.0),(262,'Charles Dutoit & L\'Orchestre Symphonique de Montréal',0.0),(263,'Equale Brass Ensemble, John Eliot Gardiner & Munich Monteverdi Orchestra and Choir',0.0),(264,'Kent Nagano and Orchestre de l\'Opéra de Lyon',0.0),(265,'Julian Bream',0.0),(266,'Martin Roscoe',0.0),(267,'Göteborgs Symfoniker & Neeme Järvi',0.0),(268,'Itzhak Perlman',0.0),(269,'Michele Campanella',0.0),(270,'Gerald Moore',0.0),(271,'Mela Tenenbaum, Pro Musica Prague & Richard Kapp',0.0),(272,'Emerson String Quartet',0.0),(273,'C. Monteverdi, Nigel Rogers - Chiaroscuro; London Baroque; London Cornett & Sackbu',0.0),(274,'Nash Ensemble',0.0),(275,'Philip Glass Ensemble',0.0);
 /*!40000 ALTER TABLE `artistas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,16 +75,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `canciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `canciones` (
-  `id` smallint(6) NOT NULL,
+  `id` smallint NOT NULL,
   `nombre` varchar(123) DEFAULT NULL,
-  `id_album` smallint(6) DEFAULT NULL,
-  `id_tipo_de_medio` tinyint(4) DEFAULT NULL,
-  `id_genero` tinyint(4) DEFAULT NULL,
+  `id_album` smallint DEFAULT NULL,
+  `id_tipo_de_medio` tinyint DEFAULT NULL,
+  `id_genero` tinyint DEFAULT NULL,
   `compositor` varchar(188) DEFAULT NULL,
-  `milisegundos` int(11) DEFAULT NULL,
-  `bytes` bigint(20) DEFAULT NULL,
+  `milisegundos` int DEFAULT NULL,
+  `bytes` bigint DEFAULT NULL,
   `precio_unitario` decimal(3,2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_album_idx` (`id_album`),
@@ -111,10 +112,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `canciones_de_playlists`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `canciones_de_playlists` (
-  `id_playlist` tinyint(4) DEFAULT NULL,
-  `id_cancion` smallint(6) DEFAULT NULL,
+  `id_playlist` tinyint DEFAULT NULL,
+  `id_cancion` smallint DEFAULT NULL,
   KEY `id_cancion_idx` (`id_cancion`),
   KEY `id_playlist_idx` (`id_playlist`),
   CONSTRAINT `id_cancion` FOREIGN KEY (`id_cancion`) REFERENCES `canciones` (`id`),
@@ -138,9 +139,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clientes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clientes` (
-  `id` tinyint(4) NOT NULL,
+  `id` tinyint NOT NULL,
   `primer_nombre` varchar(9) DEFAULT NULL,
   `apellido` varchar(12) DEFAULT NULL,
   `empresa` varchar(48) DEFAULT NULL,
@@ -152,7 +153,7 @@ CREATE TABLE `clientes` (
   `telefono` varchar(19) DEFAULT NULL,
   `fax` varchar(18) DEFAULT NULL,
   `email` varchar(29) DEFAULT NULL,
-  `id_representante` tinyint(4) DEFAULT NULL,
+  `id_representante` tinyint DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -173,9 +174,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `empleados`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `empleados` (
-  `id` tinyint(4) NOT NULL,
+  `id` tinyint NOT NULL,
   `apellido` varchar(8) DEFAULT NULL,
   `nombre` varchar(8) DEFAULT NULL,
   `titulo` varchar(19) DEFAULT NULL,
@@ -210,10 +211,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `facturas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `facturas` (
-  `id` smallint(6) NOT NULL,
-  `id_cliente` tinyint(4) DEFAULT NULL,
+  `id` smallint NOT NULL,
+  `id_cliente` tinyint DEFAULT NULL,
   `fecha_factura` date DEFAULT NULL,
   `direccion_de_facturacion` varchar(40) DEFAULT NULL,
   `ciudad_de_facturacion` varchar(19) DEFAULT NULL,
@@ -243,9 +244,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `generos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `generos` (
-  `id` tinyint(4) NOT NULL,
+  `id` tinyint NOT NULL,
   `nombre` varchar(18) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -267,13 +268,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `items_de_facturas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `items_de_facturas` (
-  `id` smallint(6) NOT NULL,
-  `id_factura` smallint(6) DEFAULT NULL,
-  `id_cancion` smallint(6) DEFAULT NULL,
+  `id` smallint NOT NULL,
+  `id_factura` smallint DEFAULT NULL,
+  `id_cancion` smallint DEFAULT NULL,
   `precio_unitario` decimal(3,2) DEFAULT NULL,
-  `cantidad` tinyint(4) DEFAULT NULL,
+  `cantidad` tinyint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_factura_idx` (`id_factura`),
   KEY `id_cancion_idx` (`id_cancion`),
@@ -298,9 +299,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `playlists`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `playlists` (
-  `id` tinyint(4) NOT NULL,
+  `id` tinyint NOT NULL,
   `nombre` varchar(26) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -322,9 +323,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tipos_de_medio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tipos_de_medio` (
-  `id` tinyint(4) NOT NULL,
+  `id` tinyint NOT NULL,
   `nombre` varchar(27) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -349,4 +350,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-27 18:19:30
+-- Dump completed on 2021-04-05 22:00:59
