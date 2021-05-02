@@ -1,0 +1,11 @@
+/* ======================
+- Estilos para contacto
+====================== */
+
+body.contacto {
+    background-color: var(--color-azul);
+}
+
+h1.contacto {
+    color: green
+}

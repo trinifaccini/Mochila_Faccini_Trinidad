@@ -82,4 +82,21 @@ console.log (esPar (10) + ' y '+ informarSiPuedeSubir(puedeSubir(1.40,false,fals
 
 
 
+function agregarHttp(url) {
+    return 'http://' + url;
+}
+
+function procesar(array, callback){
+    let nuevoArray = [];
+    for(let i = 0; i < array.length; i++){
+        nuevoArray.push(callback(array[i]));
+    }
+    return nuevoArray;
+}
+
+
+console.log(agregarHttp("www.google.com"));
+
+
+console.log(procesar(["www.google.com","www.yahoo.com"],agregarHttp));
 

@@ -1,0 +1,96 @@
+@import 'contacto.css';
+@import 'login.css';
+@import 'registro.css';
+@import 'index.css';
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+.titulo span{
+    width: auto;
+}
+
+
+img.icono_shop {
+    position: absolute;
+    font-size: 40px;
+    padding-left: 13px;
+    padding-top: 43px;
+    width: 70px;
+}
+
+
+body{
+    margin: 0;
+}
+
+
+header h1, header h3 {
+    width: 100%;
+    margin: 0px;
+}
+
+
+header h3 {
+    color : #000000;
+    background-color: #1CD1B0;
+    padding-left: 34px;
+}
+
+
+header h1 {
+    color : #ffffff;
+    background-color: #00669F;
+    font-size: 36px;
+    box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.25);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+}
+
+
+form {
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+
+form h1{
+    width:600px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 300%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+footer{
+    background-color: #00669F;
+    margin-bottom: 0;
+    margin-top: 80px;
+}
+
+footer p {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+
+input{
+    font-size: large;
+    height: 60px;
+    width: 600px;
+    border: 1.53407px solid #000000;
+    padding-left: 20px;
+}

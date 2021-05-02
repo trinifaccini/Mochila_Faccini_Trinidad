@@ -1,0 +1,28 @@
+div.combo {
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+}
+
+/* =======================
+- Página de pruebas
+======================= */
+
+header {
+
+    /* Voy a activar flex para los hijos directos del header. */
+    /* En este caso alineo el <hi> con <nav> (lista en este caso) porque son los unicos hijos directos del header. */
+    display: flex;
+}
+
+ul {
+
+    /* Para tambien alinear a CADA elemento de la lista <li>, le debo poner la propiedad flex a ul 
+    ya que los <li> son SUS hijos directos, no los de <nav> */
+    display: flex;
+
+    /* Para sacarle el bullet */
+    list-style-type: none;
+}
