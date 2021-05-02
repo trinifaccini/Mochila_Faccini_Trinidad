@@ -1,0 +1,11 @@
+/* ======================
+- Estilos para la home
+====================== */
+
+h1.home {
+    color: var(--color-azul)
+}
+
+p.home {
+    font-size: 30px;
+}

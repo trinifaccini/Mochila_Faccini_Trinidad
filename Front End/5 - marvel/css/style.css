@@ -1,0 +1,164 @@
+/*
+@font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.titulo span{
+    width: auto;
+}
+
+body{
+    margin: 0;
+}
+
+
+h1, h3 {
+    width: 100%;
+    margin: 0px;
+    padding-left: 34px;
+}
+
+
+h3 {
+    color : #000000;
+    background-color: #1CD1B0;
+}
+
+
+h1 {
+    color : #ffffff;
+    background-color: #00669F;
+    font-size: 36px;
+    box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.25);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+article{    
+    position: relative;
+}
+
+
+.cajaBatman,.cajaMaravilla, .cajaSuperman{
+    color : #000000;
+    background-color: #F3F3F3;
+    width: 400px;
+    height: 650px;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+
+article img.icon {
+    z-index: 2;
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 150px ;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+
+article img.fondo {
+    z-index: 1;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
+}
+
+
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 300px;
+}
+
+article p{
+    position: absolute;
+    text-align: justify;
+    width: 350px;
+    height: 170px;
+    padding-left:50px;
+}
+
+/*
+.cajaBatman{
+    background-image: url("../img/bg-batman.jpg");
+}
+
+.cajaMaravilla{
+    background-image: url("../img/bg-wonderw.jpg");
+}
+
+.cajaSuperman{
+    background-image: url("../img/bg-superman.jpg");
+}
+*/
+
+button{
+    font-family: 'Roboto';
+    color: #ffffff;
+    background-color: #00669F;
+    position: absolute;
+    border-radius: 5px;
+    width: 125px;
+    height: 50px;
+    margin-top: 220px;
+    margin-left: 137.5px;
+
+}
+
+.fas.fa-heart{
+
+    z-index: 2;
+    position: absolute;
+    color: #ff0000;
+    font-size: 25px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+footer{
+    position: relative;
+    background-color: #00669F;
+    margin-top: 80px;
+    margin-bottom: 0;
+}
+
+footer p {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 37%;
+    display: inline-block;
+}
+
+footer img{
+    position: relative;
+    height: 30px;
+    margin: auto;
+    padding-left: 25%;
+}
+
+
+
+
+

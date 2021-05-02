@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regristro</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html"> <img class = "icono_shop" src="./img/icon.jpg" alt="icono de shop"> </a> 
+        <h3 class = "uno">20% de descuento en todos los productos!</h3>
+        <h1 class = "dos">Tienda Super Heroes</h1>
+    </header>
+    
+    <form action="" method="GET">
+
+        <h1>Registro</h1>
+
+        <div class="registGroup">
+            <label for="nombre"></label>
+            <input type="text" name="nombre" placeholder="Nombre y Apellido" id="nombre">
+        </div>
+
+        <div class="registGroup">
+            <label for=""></label>
+            <input type="email" name="email" placeholder="Correo Electrónico">
+        </div>
+
+        <div class="registGroup">
+            <label for=""></label>
+            <input type="password" name="password" placeholder="Contraseña">
+        </div>  
+        
+        <div class="registGroup">
+            <label for=""></label>
+            <select name="pais">
+                <option>Seleccionar país</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Venezuela">Venezuela</option>
+            </select>
+        </div>
+
+        <div class="registGroup">
+            <input type="reset" value="Resetear">
+            <input type="submit" value="Entrar">
+        </div>
+
+        <p>¿Ya tenes una cuenta?<a href="./login.html">Ingresá</a></p>
+        
+    </form>
+
+    <footer>
+        <p>Todos los derechos reservados a FRONT END 1</p>
+    </footer>
+    
+</body>
+</html>
