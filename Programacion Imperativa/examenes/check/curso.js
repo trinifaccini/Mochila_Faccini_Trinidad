@@ -44,3 +44,5 @@ let curso = {
 }; 
 
 
+const autos = require("./autos");
+const persona = require("./personas")

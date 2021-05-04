@@ -59,7 +59,8 @@ const concesionaria = {
         
         let auto = this.buscarAuto(patente);
 
-        if(auto !== null) auto.vendido = true;
+        if(auto !== null)
+        auto.vendido = true;
     },
     
     autosParaLaVenta: function(){
@@ -77,7 +78,7 @@ const concesionaria = {
         */
 
         let autosFilter = this.autos.filter(function(auto){
-            return auto.vendido == false;
+            return auto.vendido === false;
         });
         
         return autosFilter;
@@ -85,21 +86,21 @@ const concesionaria = {
 
    autosNuevos: function(){
        
-        let autosVenta = this.autosParaLaVenta();
+        let vendibles = this.autosParaLaVenta();
 
         /*
         let autos0KM = [];
 
-        for(let i = 0; i < autosVenta.length; i++){
-            if(autosVenta[i].km < 100){
-                autos0KM.push(autosVenta[i]);
+        for(let i = 0; i < vendibles.length; i++){
+            if(vendibles[i].km < 100){
+                autos0KM.push(vendibles[i]);
             }
         }
 
         return autos0KM;
         */
 
-        let autos0KMFilter = autosVenta.filter(function(auto){ 
+        let autos0KMFilter = vendibles.filter(function(auto){ 
             
             return auto.km < 100;
         });
@@ -142,17 +143,12 @@ const concesionaria = {
         }
 
         return total;
-        
-
-        //Preguntar a Lean
-
-        let totalReduce = precios.reduce(function(acumulador, precio){
-            return acumulador + precio;
-        });
         */
 
-
-        let total = precios.reduce((acum,precio) => acum + precio);
+        let total = precios.reduce(function(acum, precio) {
+            return acum + precio;
+        });
+            
         return total;
 
     },
@@ -185,3 +181,4 @@ const concesionaria = {
     }
 
 };
+

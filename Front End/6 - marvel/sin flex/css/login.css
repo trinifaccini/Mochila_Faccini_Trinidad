@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 form .loginGroup {
     margin-top: 20px;
 }
@@ -16,3 +17,23 @@ form .loginGroup label {
     font-weight: bold;
 }
 
+=======
+form .loginGroup {
+    margin-top: 20px;
+}
+
+
+form .loginGroup label {
+    display: block;
+    margin: auto;
+}
+
+
+.loginGroup input[type="submit"]{
+    background: #1CD1B0;
+    border: none;
+    border-radius: 23.011px;
+    font-weight: bold;
+}
+
+>>>>>>> 4b4de251c8482eff2735cf41b9c26e2d2981bf91

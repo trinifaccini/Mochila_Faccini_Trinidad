@@ -48,13 +48,16 @@ function Alumno(nombre, faltas, notas){
     }
 };
 
+let alumno1 = new Alumno("Lu", 2, [9,10,8]); 
+let alumno1 = new Alumno("Trini", 2, [9,10,8]); 
 
-let listaE studiantes = [
-    new Estudiante("Agus Pasqualis", 5, [10,10,8,10,4]),
-    new Estudiante("Angel Vargas", 3, [4,10,5,8,10]),
-    new Estudiante("Ana Belen", 2, [8,9,4,10,10]),
-    new Estudiante("Carlos Naranjo", 1, [9,5,6,5,10]),
-    new Estudiante("Catalina Forgione", 7, [2,8,5,8,8])
+
+let listaEstudiantes = [
+    new Alumno("Agus Pasqualis", 5, [10,10,8,10,4]),
+    new Alumno("Angel Vargas", 3, [4,10,5,8,10]),
+    new Alumno("Ana Belen", 2, [8,9,4,10,10]),
+    new Alumno("Carlos Naranjo", 1, [9,5,6,5,10]),
+    new Alumno("Catalina Forgione", 7, [2,8,5,8,8])
 ]
 
 
