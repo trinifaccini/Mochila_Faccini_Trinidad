@@ -1,42 +1,32 @@
-article{    
-    position: relative;
+header nav{
+    width: 100%;
+    padding: 5px 0;
+    background-color: #001D2D;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-nav{
-    text-align: right;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: #000000;
-}
-
-nav a{
+header nav a{
     color: #F3F3F3;
-    margin-right: 15px;
+    margin-right: 20px;
     text-align: center;
     text-decoration: none;
 }
 
-.superheroes{
-    margin-left: auto;
-    margin-right: auto;
-    width: 1268px;
-    margin-top: 80px;
+
+main.superheroes{
+  justify-content: space-around;
 }
 
-.cajaBatman,.cajaMaravilla, .cajaSuperman{
+
+.cajaBatman,.cajaHarley, .cajaSuperman{
     color : #000000;
     background-color: #F3F3F3;
     width: 400px;
     height: 650px;
     border-radius: 25px 25px 0 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: inline-block;
-}
-
-
-.cajaMaravilla{
-    margin-left: 30px;
-    margin-right: 30px;
 }
 
 
@@ -45,9 +35,9 @@ article img.icon {
     position: absolute;
     margin-left: 150px;
     margin-top: 150px ;
-    width:100px;
-    height:100px;
-    border-radius:50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -96,12 +86,12 @@ article button{
     color: #ffffff;
     background-color: #00669F;
     position: absolute;
-    border-radius: 5px;
+    border-width: 0;
     width: 125px;
     height: 50px;
     margin-top: 250px;
     margin-left: 137.5px;
-
+    cursor: pointer;
 }
 
 .fas.fa-heart{

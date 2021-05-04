@@ -1,36 +1,50 @@
-form .registGroup {
-    margin-top: 20px;
+/* Los hijos de las div son todos los input y el select de opciones
+  Aplico flex para que tomen el ancho que quiero para cada uno
+  La propiedad justify content solo afecta a los botones de enviar y resetear
+  que ocupan menos del 100% del ancho, la uso para el estilo de estos dos */
+form div.registGroup {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 
-form .registGroup label {
-    display: block;
-    margin: auto;
+form div.registGroup input{
+  width: 100%;
+  height: 60px;
+  font-size: large;
+  border: 1.53407px solid #000000;
+  padding-left: 20px;
 }
 
 
-.registGroup input[type="submit"], .registGroup input[type="reset"]{
-    border: none;
-    border-radius: 23.011px;
-    font-weight: bold;
-    width: 300px;
-}
-
-.registGroup input[type="submit"]{
-    background: #1CD1B0;
-}
-
-.registGroup input[type="reset"]{
-    background: #888888;
-    color: #ffffff;
+form div.registGroup select[name="pais"]{
+  font-size: large;
+  height: 60px;
+  width: 100%;
+  border: 1.53407px solid #000000;
+  padding-left: 20px;
 }
 
 
-.registGroup select[name="pais"]{
-    font-size: large;
-    height: 60px;
-    width: 600px;
-    border: 1.53407px solid #000000;
-    padding-left: 20px;
+form div.registGroup input[type="submit"], form div.registGroup input[type="reset"]{
+  border: none;
+  border-radius: 23.011px;
+  font-weight: bold;
+  height: 45px;
+  width: 49%;
+  cursor: pointer;
+}
 
+
+form div.registGroup input[type="submit"]{
+  background: #1CD1B0;
+}
+
+
+form div.registGroup input[type="reset"]{
+  background: #888888;
+  color: #ffffff;
 }

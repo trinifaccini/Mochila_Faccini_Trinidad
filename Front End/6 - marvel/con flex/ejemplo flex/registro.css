@@ -1,0 +1,156 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+body{
+  margin: 0;
+}
+
+
+header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+
+header div, header h3 {
+  margin: 0px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+
+header h3 {
+  color : #000000;
+  background-color: #1CD1B0;
+}
+
+
+header div img.icono_shop{
+  width: 70px;
+  margin-right: 10px;
+}
+
+
+header div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: #00669F;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.25);
+}
+
+
+header div h1 {
+  color : #ffffff;
+  margin: 0px;
+}
+
+
+/* El unico hijo de esta seccion es el form
+  Aplico flex para que me centre el form tanto horizontal como verticalmente */
+main{
+  margin: 80px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Los hijos del form son el h1, las div y el parrafo del final
+  Aplico flex para que tomen el ancho que quiero para cada uno
+   */
+form {
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+form h1{
+  width: 100%;
+  text-align: left;
+  color: #333333;
+  font-weight: bold;
+  font-size: 300%;
+}
+
+
+form p{
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Los hijos de las div son todos los input y el select de opciones
+  Aplico flex para que tomen el ancho que quiero para cada uno
+  La propiedad justify content solo afecta a los botones de enviar y resetear
+  que ocupan menos del 100% del ancho, la uso para el estilo de estos dos */
+form div.registGroup {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+form div.registGroup input{
+  width: 100%;
+  height: 60px;
+  font-size: large;
+  border: 1.53407px solid #000000;
+  padding-left: 20px;
+}
+
+
+form div.registGroup select[name="pais"]{
+  font-size: large;
+  height: 60px;
+  width: 100%;
+  border: 1.53407px solid #000000;
+  padding-left: 20px;
+}
+
+
+form div.registGroup input[type="submit"], form div.registGroup input[type="reset"]{
+  border: none;
+  border-radius: 23.011px;
+  font-weight: bold;
+  height: 45px;
+  width: 49%;
+  cursor: pointer;
+}
+
+
+form div.registGroup input[type="submit"]{
+  background: #1CD1B0;
+}
+
+
+form div.registGroup input[type="reset"]{
+  background: #888888;
+  color: #ffffff;
+}
+
+
+footer{
+  background-color: #00669F;
+  margin-bottom: 0;
+}
+
+
+footer p {
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 0;
+}

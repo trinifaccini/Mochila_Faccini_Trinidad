@@ -1,18 +1,27 @@
-form .loginGroup {
-    margin-top: 20px;
+/* Los hijos de las div son todos los input y el select de opciones
+  Aplico flex para que tomen el ancho que quiero para cada uno */
+form div.loginGroup {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
-form .loginGroup label {
-    display: block;
-    margin: auto;
+form div.loginGroup input{
+  width: 100%;
+  height: 60px;
+  font-size: large;
+  border: 1.53407px solid #000000;
+  padding-left: 20px;
 }
 
 
-.loginGroup input[type="submit"]{
-    background: #1CD1B0;
-    border: none;
-    border-radius: 23.011px;
-    font-weight: bold;
+form div.loginGroup input[type="submit"]{
+  background: #1CD1B0;
+  border: none;
+  border-radius: 23.011px;
+  font-weight: bold;
+  height: 45px;
+  cursor: pointer;
 }
-
