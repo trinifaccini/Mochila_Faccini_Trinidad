@@ -1,7 +1,7 @@
+@import 'index.css';
 @import 'contacto.css';
 @import 'login.css';
 @import 'registro.css';
-@import 'index.css';
 
 * {
   font-family: 'Roboto', sans-serif;
