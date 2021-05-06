@@ -74,8 +74,9 @@ const inmobiliaria = {
 
     buscarPorPrecio: function(precio){
 
-        /*
         let dptosDisponibles = this.departamemosDisponibles();
+
+        /*
 
         let dptosPrecio = dptosDisponibles.filter(function(dpto){
             return dpto.precioAlquiler <= precio;

@@ -19,16 +19,27 @@ nav ul li {
 
 /*
 
-Para 
+Propiedad que aplica a los hijos pares de tipo li de la ul dentro del nav
 nav ul li:nth-child(odd) {
     background-color: red;
 }
 
+Propiedad que aplica al hijo numero 2 de la section que debe ser de tipo article
+Si el segundo hijo de la section no es de tipo article, esta propiedad no se va a aplicar
 section article:nth-child(2) {
     background: orange;
 }
 
+Propiedad que aplica al segundo hijo article de la section 
 section article:nth-of-type(2) {
+    background: purple;
+}
+
+section article:first-child {
+    background: purple;
+}
+
+section article:last-child {
     background: purple;
 }
 
