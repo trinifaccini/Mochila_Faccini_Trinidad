@@ -1,0 +1,245 @@
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+}
+
+
+/*  Sus hijos son: 
+    el h3 del logo
+    la nav
+    la div con los botones
+    Voy a aplicar flexbox para poder alinearlos verticalmente
+    y para distribuirlos horizontalmente
+*/
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #2F1793;
+    color: white;
+    padding: 0 20px;
+}
+
+
+header h3{
+    font-weight: bold;
+}
+
+ul{
+    list-style: none;
+}
+
+header nav{
+    display: flex;
+}
+
+/* Para que los elementos de la lista me queden en horizonal en vez de en verticla
+    voy a usar flexbox en esta parte ya que los <li> son SUS hijos */
+header nav ul{
+    display: flex;
+    padding: 0;
+}
+
+
+header nav ul li, footer div.otra div.logos ul li{
+    margin-left: 20px;
+}
+
+header nav ul.items li:nth-child(1), footer div.otra div.logos ul li:nth-child(1){
+    margin-left: 0;
+}
+
+
+header button {
+    color: white;
+    padding: 3px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+
+header button[name="sign_in"] {
+    border: 0.75px solid white;
+    background-color: #2F1793;
+}
+  
+  
+header button[name="sign_up"] {
+    background: #23DCC2;
+    border: none;
+}
+
+/* Su unico hijo es la section.cards
+  Utilizo flexbox para centrala en el main */
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Sus hijos son los tres articles de las cards
+    Utilizo flexbox para poder definirles el ancho y su posicionamiento horizontal*/
+main section.cards{
+    width: 100%;
+
+    display: flex;    
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    background: #E5E5E5;
+    padding: 50px;
+}
+
+
+/* Los hijos de cada article son
+    el icono
+    el parrafo que dice las horas
+    la div
+    el h6 que dice el lugar
+    Utilizo flexbox para poder definir su ancho*/ 
+main section.cards article.card{
+    position: relative;
+
+    width: 30%;
+    height: 30vh;
+    padding: 0 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    background: white;
+    font-size: 75%;
+   
+}
+
+main section.cards article.card .icon_main{
+    position: absolute;
+    margin-left: 5%;
+    margin-bottom: 50%;
+
+    color: white;
+    border-radius: 50%;
+    font-size: 150%;
+    padding: 8px;
+}
+
+
+main section.cards article.card .fa-basketball-ball.icon_main{
+    background: #DF6EAC;
+}
+
+
+main section.cards article.card .fa-behance.icon_main{
+    background: #6EC4DF;
+}
+
+
+main section.cards article.card .fa-instagram.icon_main{
+    background: #6E73DF;
+}
+
+
+main section.cards article.card p{
+    width: 100%;
+    margin: 0;
+}
+
+
+main section.cards article.card div{
+    width: 100%;
+    /* Sus hijos son
+    el h2 con el titulo de la card
+    el parrafo debajo del titulo
+    Utilizo flexbox para definir su ancho*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+main section.cards article.card h6{
+    font-weight: bold;
+    width: 100%;
+    margin: 0;
+}
+
+
+main section.cards article.card div h2{
+    margin: 0;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+main section.cards article.card div p{
+    margin: 0;
+    width: 100%;
+}
+
+
+/*  Sus hijos son: 
+    el h3 del logo
+    las dos listas
+    la div con los tres logos
+    Voy a aplicar flexbox para poder alinearlos verticalmente
+    y para distribuirlos horizontalmente
+*/
+
+footer div.otra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #16284C;
+    color: white;
+    padding: 0 20px;
+    color: white;
+
+    padding-top: 5vh;
+    padding-bottom: 20vh;
+}
+
+
+/* Esta div es la que contiene al seguinos y a los tres logos, por eso es a esta sola a la que aplico flexbox*/
+footer div.otra div.logos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+ 
+
+footer div.otra div.logos h5{
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0;
+
+    font-weight: bold;
+}
+  
+
+footer div.otra div.logos ul{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+
+footer div.pie{
+    margin: 0;
+    background: black;
+}
+  
+  footer div.pie p{
+    margin: 0;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}

@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --main_color: #ffffff;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.header {
+    /*Display & Box Model*/
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 6em 0 6em;
+    width: 100vw;
+    height: 130px;
+
+    /*Otras*/
+    background-color: #2f1793;
+}
+
+.title {
+    /*Otras*/
+    color: var(--main_color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+
+.list_header {
+    /*Display & Box Model*/
+    display: flex;   
+
+
+    /*Otras*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+}
+
+.list_header li a {
+    /*Display & Box Model*/
+    margin-right: 50px;
+
+    /*Otras*/
+    color: var(--main_color);
+    text-decoration: none;
+}
+
+.link_btn-header {
+    /*Display & Box Model*/
+    border: 2px solid var(--main_color);
+    border-radius: 25px;
+    padding: .5em 1.6em;
+
+    /*Otras*/
+    color: var(--main_color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.link_btn-header:first-child {
+    margin-right: 1.3em;
+}
+
+.link_btn-header:hover {
+    /*Display & Box Model*/
+    border: none;
+
+    /*Otras*/
+    background-color: #23dcc2;
+}
+
+/* ==========================================================================
+   MAIN
+   ========================================================================== */
+
+.main {
+    /*Display & Box Model*/
+    position: relative;
+    width: 100vw;
+}
+
+.section_main {
+    /*Display & Box Model*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: calc(100vh - 130px - 350px);
+    padding-top: 2em;
+
+    /*Otras*/
+    background-color: #eaeaea;
+}
+
+.article_main {
+    /*Display & Box Model*/
+    width: 30em;
+    height: 15em;
+    padding: 3.4em 2.2em 2.2em ;
+
+    /*Otras*/
+    background-color: var(--main_color);
+}
+
+.icon_main {
+    /*Display & Box Model*/
+    position: absolute;
+    top: 4.2em;
+    border-radius: 50%;
+    padding: .5em;
+    
+    /*Otras*/
+    color: var(--main_color);
+}
+
+.fa-basketball-ball.icon_main {
+    /*Otras*/
+    background-color: #df6eac;
+}
+
+.fa-behance.icon_main {
+    /*Otras*/
+    background-color: #6ec4df;
+    font-size: 1.5rem;
+}
+
+.fa-instagram.icon_main {
+    /*Otras*/
+    background-color: #6e73df;
+    font-size: 1.6rem;
+}
+
+.h3_main {
+    /*Display & Box Model*/
+    padding-bottom: 1.5em;
+
+    /*Otras*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    font-weight: 200;
+}
+
+.subtitle_main {
+    /*Otras*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+}
+
+.parag_main {
+    /*Otras*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+.parag_place{
+    /*Display & Box Model*/
+    padding-top: 4em;
+
+    /*Otras*/
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+/*Display & Box Model*/
+/*Otras*/
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.sec_footer-1 {
+    /*Display & Box Model*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100vw;
+    height: 300px;
+    padding-top: 5em;
+
+    /*Otras*/
+    background-color: #16284c;
+}
+
+.sec_footer-2 {
+    /*Display & Box Model*/
+    width: 100vw;
+    height: 50px;
+    padding-top: 1em;
+
+    /*Otras*/
+    background-color: #000000;
+    color: var(--main_color);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.links_footer li {
+    /*Display & Box Model*/
+    margin-bottom: .5em;
+}
+
+.links_footer li a{
+    /*Otras*/
+    color: var(--main_color);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.parag_footer {
+    /*Otras*/
+    color: var(--main_color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.social_media {
+    /*Display & Box Model*/
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+    width: 12em;
+}
+
+.icon_footer {
+    /*Otras*/
+    color: var(--main_color);
+}
+
+.fa-basketball-ball {
+    /*Otras*/
+    font-size: 1.5rem;
+}
+
+.fa-instagram {
+    /*Otras*/
+    font-size: 1.7rem;
+}
+
+.fa-behance {
+    /*Otras*/
+    font-size: 1.9rem;
+}
+

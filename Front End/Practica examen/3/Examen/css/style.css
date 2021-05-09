@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap"');
+
+:root{
+    --color-h1: #3C2313;
+    --color-h3: #666666;
+    --color-blanco: #FFFFFF;
+    --color-negro: #000000;
+    --color-narnja: #F0A83E;
+    --border-radius: 4px;
+}
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+body {
+    margin: 0;
+}
+
+
+/***************
+    HEADER
+****************/
+
+header section.uno, header section.dos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+
+/* SECCION UNO */
+
+
+header section.uno{
+    color: var(--color-blanco);
+    background: #222222;
+}
+
+
+header section.uno h5{
+    margin: 0;
+    padding: 3px;
+}
+
+
+header section.uno div{
+    display: flex;
+    align-items: center;
+}
+
+
+header section.uno div .fa-chevron-down{
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+
+/* SECCION DOS */
+
+header section.dos{
+    background: var(--color-narnja);
+}
+
+header section.dos div.titulo{
+    display: flex;
+    align-items: center;
+}
+
+
+header section.dos div.titulo h2{
+    font-weight: bold;
+}
+
+
+header section.dos div.titulo h2.dos{
+    color: var(--color-blanco);
+}
+
+
+header section.dos ul{
+    display: flex;
+    list-style: none;
+
+    padding: 0;
+}
+
+
+header section.dos ul li{
+    margin-left: 20px;
+    color: var(--color-blanco);
+}
+
+
+header section.dos ul li:nth-child(1){
+    margin-left: 0;
+}
+
+
+header section.dos a{
+    text-decoration: none;
+    color: var(--color-blanco);
+    padding-left: 5px;
+}
+
+
+header section.dos div.atajos a:nth-child(3){
+    margin-left: 20px;
+}
+
+
+header section.dos div.atajos a:nth-child(1){
+    display: none;
+}
+
+
+/***************
+    MAIN
+****************/
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin: 70px 50px;
+}
+
+
+/* SECCION ppal */
+
+
+main section.ppal{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+main section.ppal h1{
+    width: 100%;
+
+    font-size: 40px;
+    color: var(--color-h1);
+    text-align: center;
+    font-weight: bold;
+}
+
+
+main section.ppal div{
+    display: flex;
+}
+
+
+main section.ppal div h3{
+    margin-left: 20px;
+    color: var(--color-h3);
+}
+
+
+main section.ppal div h3:nth-child(1){
+    margin-left: 0;
+}
+
+main div a{
+    text-decoration: none;
+    color: var(--color-h3);
+}
+
+
+/* SECCION SHOP */
+main section.shop{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+main section.shop article{
+    margin-top: 15px;
+    background: #FBFAF6;
+}
+
+
+main section.shop article p{
+    text-align: center; 
+}
+
+
+main section.shop article h2{
+    color: var(--color-narnja);
+    text-align: center; 
+}
+
+
+
+/***************
+    FOOTER
+****************/
+
+footer{
+    margin: 0;
+    background-color: var(--color-negro);
+}
+
+
+footer p{
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: var(--color-blanco);
+    font-weight: bold;
+}
+
+
+@media(max-width: 600px){
+
+    header section.dos nav{
+        display: none;
+    }
+
+    main section.shop{
+        flex-direction: column;
+    }
+
+    header section.dos div.atajos a{
+        display: none;
+    }
+
+    header section.dos div.atajos a:nth-child(1){
+        display: block;
+    }
+    
+}

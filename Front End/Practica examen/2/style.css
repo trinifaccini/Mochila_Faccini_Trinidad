@@ -55,6 +55,7 @@ header nav ul li, section.otra div.pie ul li{
     margin-left: 20px;
 }
 
+
 header nav ul li:nth-child(1), section.otra div.pie ul li:nth-child(1){
     margin-left: 0;
 }
@@ -126,7 +127,7 @@ main section.cards article.card{
 main section.cards article.card .icon_main{
     position: absolute;
     margin-left: 5%;
-    margin-bottom: 50%;
+    bottom: 90%;
 
     color: white;
     border-radius: 50%;
@@ -202,10 +203,13 @@ section.otra {
     background-color: #16284C;
     color: white;
     padding: 0 20px;
-    color: white;
 
     padding-top: 5vh;
     padding-bottom: 20vh;
+}
+
+section.otra ul {
+    padding: 0;
 }
 
 
@@ -229,7 +233,6 @@ section.otra div.pie h5{
 section.otra div.pie ul{
     display: flex;
     justify-content: center;
-    padding: 0;
 }
 
 
